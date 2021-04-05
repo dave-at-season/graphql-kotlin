@@ -74,7 +74,7 @@ internal fun KClass<*>.isValidAdditionalType(inputType: Boolean): Boolean = !(in
 
 internal fun KClass<*>.isEnum(): Boolean = this.isSubclassOf(Enum::class)
 
-internal fun KClass<*>.isListType(): Boolean = this.isSubclassOf(List::class) || this.java.isArray
+internal fun KClass<*>.isListType(): Boolean = this.isSubclassOf(List::class) || this.isSubclassOf(Set::class) || this.java.isArray
 
 @Throws(CouldNotGetNameOfKClassException::class)
 internal fun KClass<*>.getSimpleName(isInputClass: Boolean = false): String {
